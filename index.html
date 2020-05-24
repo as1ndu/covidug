@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>COVID19 — Uganda Dashboard</title>
+
+    <link rel="icon" href="img/fav.png">
+    <link rel="stylesheet" href="css/chartist.css">
+    <link rel="stylesheet" href="css/mvp.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+</head>
+
+<body>
+    <a class="github-fork-ribbon left-top fixed" href="http://url.to-your.repo" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    <header>
+        <nav>
+            <a>
+                <img src="img/coronavirus.png" width="50%" height="50%">
+            </a>
+
+            <h1 style="color: red;">covidUG</h1>
+
+            <ul>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+        <p>Realtime Statistical Updates on state of COVID19 in Uganda**</p>
+    </header>
+
+    <main>
+
+        <aside>
+            <h2>(weekly) Statistical Overview.</h2>
+            <section id="chart">
+            </section>
+        </aside>
+
+        <section>
+            <h3></h3>
+
+            <article>
+                <aside>
+                    <h1 class="teal">😷 Active cases</h1>
+                    <p id="active-cases" class="counter">0</p>
+                </aside>
+            </article>
+
+            <article>
+                <aside>
+                    <h1 class="teal">👌 Recovered</h1>
+                    <p id="recovered" class="counter">0</p>
+                </aside>
+            </article>
+
+            <article>
+                <aside>
+                    <h1 class="teal">💀 Dead</h1>
+                    <p id="dead" class="counter">0</p>
+                </aside>
+            </article>
+
+        </section>
+
+
+        <article id="resources">
+            <h2>Resources.</h2>
+            <p>
+            <h4>🚨 Toll free emergency phone lines</h4>
+            <ul>
+                <li><a href="tel:919">919</a></li>
+                <li><a href="tel:0800-100-066">0800-100-066</a></li>
+                <li><a href="tel:0800-303-033">0800-303-033</a></li>
+                <li><a href="tel:0800-203-033">0800-203-033</a></li>
+                <li><a href="whatsapp://send?text=Hello!&phone=+256-323-200-660">0323-200-660 (WhatsApp)</a></li>
+            </ul>
+            </p>
+
+            <p>
+            <h4>🎓 Educational Material</h4>
+            <ul>
+                <li><a href="https://www.health.go.ug/covid/be-ready-for-covid-19/">How to be ready for COVID-19</a></li>
+                <li><a href="https://www.health.go.ug/covid/category/dos-and-donts/">Do's & Don'ts of the COVID-19 pandemic</a></li>
+            </ul>
+            </p>
+
+            <p>
+            <h4>💽 Dataset</h4>
+            <ul>
+                <li><a href="https://pomber.github.io/covid19/timeseries.json">Download the COVID-19 Dataset [json]</a></li>
+            </ul>
+            </p>
+
+        </article>
+
+    </main>
+    <footer>
+        Made with ❤  by <a href="https://twitter.com/as1ndu" style="color: antiquewhite;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">@as1ndu</a> in Kampala.
+        <p>
+            <small>
+                ** Statistical data is from <a href="https://github.com/CSSEGISandData/COVID-19/">John Hopkins</a> timeseries is parsed by <a href="https://github.com/pomber/covid19">Pomber</a>
+            </small>
+        </p>
+    </footer>
+
+    
+    <script src="js/chartist.min.js"> </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
