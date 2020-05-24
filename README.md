@@ -1,6 +1,6 @@
 # covidug
 
-A simple dashboard] with realtime statistical** updates on state of COVID19 in Uganda.
+A simple dashboard with realtime statistical** updates on state of COVID19 in Uganda.
 
 [Have a look.](https://as1ndu.github.io/covidug/index.html)
 
