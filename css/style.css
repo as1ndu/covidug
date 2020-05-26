@@ -30,17 +30,15 @@ html{
 	to { stroke-dasharray: 10px 5px;}
 }
 
-
 .ct-series-a .ct-line {
     stroke: red;
     stroke-width: 2px;
     stroke-dasharray: 0px 0px;
     animation: trip 2s infinite;
-
   }
   
-  .ct-series-a .ct-point {
-    stroke: teal;
+.ct-series-a .ct-point {
+    stroke: red;
     stroke-width: 7px;
     stroke-linecap: round;
   }

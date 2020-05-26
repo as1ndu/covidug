@@ -1,12 +1,10 @@
 // Get time series data
-
 var responseData;
 fetch("https://pomber.github.io/covid19/timeseries.json")
     .then(response => response.json())
     .then(
         // Get statistical data specific to Uganda
         responseData => {
-            //responseData["Uganda"].forEach(({ date, confirmed, recovered, deaths }) => [date, confirmed, recovered, deaths, (confirmed - recovered - deaths)]);
             let noOfDays = responseData['Uganda'].length;
             let oneWeekData = responseData['Uganda'].slice(noOfDays - 7, noOfDays)
 
@@ -18,9 +16,6 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
             ];
 
             updateStatistics(chartData); // Update statistical data
-            // console.log(noOfDays, oneWeek)
-
-            console.log(chartData[0][0]);
 
             // Chart rendering
             var data = {
@@ -32,6 +27,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
                 ]
             };
 
+            var months = ["Jan",  "Feb",  "Mar",  "Apr",  "May",  "Jun",  "Jul",  "Aug",  "Sept",  "Oct",  "Nov",  "Dec"];
             var options = {
                 width: '640px',
                 height: '320px',
@@ -39,15 +35,37 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
                 axisY: {
                     onlyInteger: true
                 },
+
                 axisX: {
                     onlyInteger: true,
                     labelInterpolationFnc: function (value) {
-                        return value;
+                        return `${value.split('-')[2]}' ${months[value.split('-')[1]]}`;
                     }
                 }
             };
 
-            var responsiveOptions = [];
+            
+            var responsiveOptions = [
+
+                ['screen and (min-width: 640px) and (max-width: 1024px)', {
+                  showPoint: false,
+                  axisX: {
+                    labelInterpolationFnc: function(value) {
+                      return 'bvb' + value;
+                    }
+                  }
+                }],
+
+                ['screen and (max-width: 640px)', {
+                  showLine: true,
+                  showArea: false,
+                  axisX: {
+                    labelInterpolationFnc: function(value) {
+                      return ``;
+                    }
+                  }
+                }]
+              ];
 
             new Chartist.Line('#chart', data, options, responsiveOptions);
         },
@@ -60,9 +78,6 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
 
 // Function to update in the DOM
 function updateStatistics(weeklyData) {
-    // console.log(`Statistical update ${weeklyData}`);
-
-    console.log(weeklyData);
 
     // Mapout DOM elements to manipulate
     let activeCases = document.querySelector('#active-cases');
@@ -73,7 +88,5 @@ function updateStatistics(weeklyData) {
     activeCases.textContent = weeklyData[1][6];
     theRecovered.textContent = weeklyData[3][6];
     theDead.textContent = weeklyData[2][6];
-
-
 }
 
