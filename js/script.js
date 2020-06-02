@@ -39,32 +39,15 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
                 axisX: {
                     onlyInteger: true,
                     labelInterpolationFnc: function (value) {
-                        return `${value.split('-')[2]}' ${months[value.split('-')[1]]}`;
+                        console.log(`${months[value.split('-')[1]]} | ${value.split('-')[1]} | ${months}`);
+
+                        return `${value.split('-')[2]}' ${months[ value.split('-')[1] -1 ]}`;
                     }
                 }
             };
 
             
             var responsiveOptions = [
-
-                ['screen and (min-width: 640px) and (max-width: 1024px)', {
-                  showPoint: false,
-                  axisX: {
-                    labelInterpolationFnc: function(value) {
-                      return 'bvb' + value;
-                    }
-                  }
-                }],
-
-                ['screen and (max-width: 640px)', {
-                  showLine: true,
-                  showArea: false,
-                  axisX: {
-                    labelInterpolationFnc: function(value) {
-                      return ``;
-                    }
-                  }
-                }]
               ];
 
             new Chartist.Line('#chart', data, options, responsiveOptions);
